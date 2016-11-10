@@ -21,7 +21,7 @@ namespace Lab12_Roshambo
             string input = Console.ReadLine().ToLower();
             bool valid = (ValidateUserInput(input));
             if (valid == true)
-                input = roshamboValue;
+                roshamboValue = ConvertInputToRoshambo(input);
                 return roshamboValue;
         }
         public bool ValidateUserInput(string input)

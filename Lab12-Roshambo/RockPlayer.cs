@@ -9,11 +9,11 @@ namespace Lab12_Roshambo
    public class RockPlayer:Player
     {
        
-        public override string GetRoshambo()
+        public override RoshamboV GetRoshambo()
         {
-            return "rock";
+            return RoshamboV.rock;
         }
-        public RockPlayer(string roshamboValue) : base(roshamboValue)
+        public RockPlayer(RoshamboV roshamboValue) : base(roshamboValue)
         {
 
         }

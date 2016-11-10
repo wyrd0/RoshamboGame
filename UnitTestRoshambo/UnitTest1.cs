@@ -9,11 +9,25 @@ namespace UnitTestRoshambo
     {
         
         [TestMethod]
-        public void TestThatSisValidUserChoice()
+        public void TestThatSisValidUserInput()
         {
             HumanPlayer human = new HumanPlayer();
             bool valid = human.ValidateUserInput("s");
             Assert.AreEqual(valid, true);
+        }
+        [TestMethod]
+        public void TestThatXisNOTValidUserInput()
+        {
+            HumanPlayer human = new HumanPlayer();
+            bool valid = human.ValidateUserInput("x");
+            Assert.AreEqual(valid, false);
+        }
+        [TestMethod]
+        public void TestGetRoshamboHuman()
+        {
+            HumanPlayer human = new HumanPlayer();
+            string roshamboH = human.GetRoshambo();
+            Assert.AreEqual(input, "scissors");
         }
     }
 }
