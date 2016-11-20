@@ -8,17 +8,23 @@ namespace Lab12_Roshambo
 {
     public class RandomPlayer:Player
     {
-        public RandomPlayer(RoshamboV roshamboValue) : base(roshamboValue)
-        {
-        }
-
-                   
-            public override RoshamboV GetRoshambo()
+        #region Method
+        public override RoshamboV GetRoshambo()
         {
             Random r = new Random();
                  
-            return ((RoshamboV)r.Next(0,2));
+            return ((RoshamboV)r.Next(0,3));
         }
+        #endregion
+
+        #region constructors
+        public RandomPlayer()
+        {
+        }
+        public RandomPlayer(RoshamboV roshamboValue) : base(roshamboValue)
+        {
+        }
+        #endregion
     }
 
 }

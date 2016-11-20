@@ -13,7 +13,12 @@ namespace Lab12_Roshambo
     public abstract class Player
     {
         protected RoshamboV roshamboValue;
-        
+
+        #region Method (abstract)
+        public abstract RoshamboV GetRoshambo();
+        #endregion
+
+        #region constructors
         public Player()
         {
 
@@ -22,7 +27,6 @@ namespace Lab12_Roshambo
         {
             roshamboValue = RoshamboValue;
         }
-        public abstract RoshamboV GetRoshambo();
-
+#endregion
     }
 }

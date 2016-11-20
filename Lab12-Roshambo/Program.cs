@@ -10,6 +10,11 @@ namespace Lab12_Roshambo
     {
         static void Main(string[] args)
         {
+            // test Human validation
+            HumanPlayer human = new HumanPlayer();
+            Console.WriteLine("Choose rock, paper or scissors? (r/p/s)  ");
+            RoshamboV roshamboH = human.GetRoshambo();
+            Console.WriteLine(roshamboH);
         }
     }
 }
