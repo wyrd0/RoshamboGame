@@ -12,17 +12,17 @@ namespace Lab12_Roshambo
         {
         }
 
-        public HumanPlayer(string roshamboValue) : base(roshamboValue)
+        public HumanPlayer(RoshamboV roshamboValue) : base(roshamboValue)
         {
         }
 
-        public override string GetRoshambo()
+        public override RoshamboV GetRoshambo()
         {
             string input = Console.ReadLine().ToLower();
             bool valid = (ValidateUserInput(input));
             if (valid == true)
                 roshamboValue = ConvertInputToRoshambo(input);
-                return roshamboValue;
+            return roshamboValue;
         }
         public bool ValidateUserInput(string input)
         {
@@ -42,35 +42,34 @@ namespace Lab12_Roshambo
                         valid = false;
                         break;
                 }
-                
+
             }
             return valid;
 
         }
-        private string ConvertInputToRoshambo(string input)
+        public RoshamboV ConvertInputToRoshambo(string input)
         {
             switch (input)
             {
                 case "r":
-                    roshamboValue = "rock";
-                    break;
+                case "rock":
+                    return RoshamboV.rock;
                 case "p":
-                    roshamboValue = "paper";
-                    break;
-                case "s":
-                    roshamboValue = "scissors";
-                    break;
+                case "paper":
+                    return RoshamboV.paper;
+               case "s":
+                case "scissors":
+                    return RoshamboV.scissors;
                 default:
-                    ;
                     Console.Write("Please enter 'r' for rock, 'p' for paper or 's' for scissors.   ");
                     input = Console.ReadLine().ToLower();
                     bool valid = ValidateUserInput(input);
                     if (valid == true)
-                        roshamboValue = input;
-                        break;
+                 roshamboValue = ConvertInputToRoshambo(input);
+                    break;
             }
             return roshamboValue;
         }
-        
+
     }
 }

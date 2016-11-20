@@ -18,15 +18,10 @@ namespace Lab12_Roshambo
         {
 
         }
-
-        public Player(RoshamboV roshamboValue)
+        public Player(RoshamboV RoshamboValue)
         {
-            this.roshamboValue = roshamboValue;
+            roshamboValue = RoshamboValue;
         }
-
-               
-       
-
         public abstract RoshamboV GetRoshambo();
 
     }

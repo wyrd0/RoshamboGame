@@ -24,10 +24,17 @@ namespace UnitTestRoshambo
         }
         [TestMethod]
         public void TestGetRoshamboHuman()
+        {        
+           HumanPlayer human = new HumanPlayer();
+            RoshamboV RoshamboValue = human.GetRoshambo();
+            Assert.AreEqual(RoshamboValue, "scissors");
+        }
+        [TestMethod]
+        public void TestConvertInputToRoshambo()
         {
             HumanPlayer human = new HumanPlayer();
-            string roshamboH = human.GetRoshambo();
-            Assert.AreEqual(input, "scissors");
+            RoshamboV roshamboH = human.ConvertInputToRoshambo("s");
+            Assert.AreEqual(roshamboH, RoshamboV.scissors);
         }
     }
 }
