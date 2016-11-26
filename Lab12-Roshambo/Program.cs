@@ -10,11 +10,27 @@ namespace Lab12_Roshambo
     {
         static void Main(string[] args)
         {
-            // test Human validation
+
+            //create human player object
             HumanPlayer human = new HumanPlayer();
-            Console.WriteLine("Choose rock, paper or scissors? (r/p/s)  ");
-            RoshamboV roshamboH = human.GetRoshambo();
-            Console.WriteLine(roshamboH);
+           
+            
+            //create validator object
+            Validator validObject = new Validator();        //this may not be needed.. revisit
+            bool valid;
+
+            Console.Write("\nWelcome to ROSHAMBO! \nThis is a game of wits.  Who will represent you in this challenge? \nPlease choose YOUR AVATAR:  Racoon (r), Wolf (w), Crow (c), Monkey (m):  ");
+            string input = RoshamboApp.GetInput();
+            string hAvatar = human.GetHAvatar(input);
+           
+            
+            Console.WriteLine( hAvatar);
+            
+            
+
+
+
+
         }
     }
 }

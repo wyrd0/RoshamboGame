@@ -27,7 +27,7 @@ namespace UnitTestRoshambo
         public void TestThatSisValidUserInput() 
         {
             Validator validH = new Validator();
-            bool valid = validH.ValidateHumanRoshamboInput("s");
+            bool valid = validH.ValidateHumanRoshamboInput("r");
             Assert.AreEqual(valid, true);
         }
 
@@ -84,6 +84,20 @@ namespace UnitTestRoshambo
             HumanPlayer human = new HumanPlayer();
             string hAvatar = human.GetHAvatar("c");
             Assert.AreEqual("Crow", hAvatar);
+        }
+        [TestMethod]
+        public void GetHAvatarIsRacoonGivenR()
+        {
+            HumanPlayer human = new HumanPlayer();
+            string hAvatar = human.GetHAvatar("R");
+            Assert.AreEqual("Racoon", hAvatar);
+        }
+        [TestMethod]
+        public void GetHAvatarIsNotValidGivenX()
+        {
+            HumanPlayer human = new HumanPlayer();
+            string hAvatar = human.GetHAvatar("x");
+            Assert.AreEqual(null, hAvatar);
         }
     }
 }

@@ -24,7 +24,9 @@ namespace Lab12_Roshambo
         public RandomPlayer(RoshamboV roshamboValue) : base(roshamboValue)
         {
         }
+        public RandomPlayer(string avatar)
+        {
+        }
         #endregion
     }
-
 }

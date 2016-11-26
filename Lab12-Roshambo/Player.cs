@@ -8,12 +8,12 @@ namespace Lab12_Roshambo
 {
     public  enum RoshamboV
     {
-        rock, paper, scissors        
+        paper, scissors, rock
     }
     public abstract class Player
     {
         protected RoshamboV roshamboValue;
-
+  
         #region Method (abstract)
         public abstract RoshamboV GetRoshambo();
         #endregion
@@ -27,6 +27,6 @@ namespace Lab12_Roshambo
         {
             roshamboValue = RoshamboValue;
         }
-#endregion
+        #endregion
     }
 }
