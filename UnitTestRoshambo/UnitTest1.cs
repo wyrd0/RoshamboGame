@@ -24,10 +24,10 @@ namespace UnitTestRoshambo
         }
 
         [TestMethod]
-        public void TestThatSisValidUserInput()
+        public void TestThatSisValidUserInput() 
         {
             Validator validH = new Validator();
-            bool valid = validH.ValidateHumanInput("s");
+            bool valid = validH.ValidateHumanRoshamboInput("s");
             Assert.AreEqual(valid, true);
         }
 
@@ -35,7 +35,7 @@ namespace UnitTestRoshambo
         public void TestThatXisNOTValidUserInput()
         {
             Validator validH = new Validator();
-            bool valid = validH.ValidateHumanInput("x");
+            bool valid = validH.ValidateHumanRoshamboInput("x");
             Assert.AreEqual(valid, false);
         }
 
@@ -53,6 +53,37 @@ namespace UnitTestRoshambo
             HumanPlayer human = new HumanPlayer();
             RoshamboV roshamboH = human.ConvertInputToRoshambo("s");
             Assert.AreEqual(roshamboH, RoshamboV.scissors);
+        }
+        [TestMethod]
+        public void TestRAppDecideFateForRockVRock()
+        {
+            string fate = RoshamboApp.DecideFate(RoshamboV.rock, RoshamboV.rock);
+            Assert.AreEqual("draw", fate);
+        }
+        [TestMethod]
+        public void TestRAppDecideFateForRockVPaper()
+        {
+            string fate = RoshamboApp.DecideFate(RoshamboV.rock, RoshamboV.paper);
+            Assert.AreEqual("player2", fate);
+        }
+        [TestMethod]
+        public void TestRAppDecideFateForRockVScissors()
+        {
+            string fate = RoshamboApp.DecideFate(RoshamboV.rock, RoshamboV.scissors);
+            Assert.AreEqual("player1", fate);
+        }
+        [TestMethod]
+        public void TestRAppDecideFateForScissorsVPaper()
+        {
+            string fate = RoshamboApp.DecideFate(RoshamboV.scissors, RoshamboV.paper);
+            Assert.AreEqual("player1", fate);
+        }
+        [TestMethod]
+        public void GetHAvatarIsCrowGivenC()
+        {
+            HumanPlayer human = new HumanPlayer();
+            string hAvatar = human.GetHAvatar("c");
+            Assert.AreEqual("Crow", hAvatar);
         }
     }
 }
